@@ -7,12 +7,13 @@ app = Flask(__name__)
 def test():
     return 'ok!\n'
 
-@app.route('/result/<value>')
-def hornet(value):
-    #db = get_db()
-    #cur = db.execute('select * from entries order by id desc')
-    #entries = cur.fetchall()
-    return str(value) + '\n'
+@app.route('/id/<id>')
+def hornet(id):
+    data = fetch(str(id))
+    #result = compute(data)
+    
+    return str(data) + '\n'
+    return data
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=32769, debug=True)
