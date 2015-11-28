@@ -1,2 +1,2 @@
 Flask==0.10.1
-cassandra-driver==3.0.0
+pycassa==1.11.0
